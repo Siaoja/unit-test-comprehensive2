@@ -76,4 +76,5 @@ public class GuessNumberGameTest {
         assertEquals("2A2B",guessResult);
 
     }
+    
 }
