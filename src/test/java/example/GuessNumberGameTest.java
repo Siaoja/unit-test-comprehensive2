@@ -46,4 +46,5 @@ public class GuessNumberGameTest {
         //then
         assertEquals("0A4B",guessResult);
     }
+
 }
