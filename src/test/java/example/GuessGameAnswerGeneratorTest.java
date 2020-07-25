@@ -1,12 +1,11 @@
 package example;
 
 import org.junit.jupiter.api.Test;
-import org.omg.PortableServer.LIFESPAN_POLICY_ID;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GuessGameAnswerGeneratorTest {
     @Test
@@ -20,12 +19,12 @@ public class GuessGameAnswerGeneratorTest {
         //then
         Set<Character> answerSet = new HashSet<>();
         assertNotNull(answer);
-        for(int index = 0, len = answer.length(); index < len; index++){
+        for (int index = 0, len = answer.length(); index < len; index++) {
             char number = answer.charAt(index);
             answerSet.add(number);
-            assertTrue(number<= '9');
-            assertTrue(number>='0');
+            assertTrue(number <= '9');
+            assertTrue(number >= '0');
         }
-        assertTrue(answerSet.size() == 4);
+        assertEquals(4, answerSet.size());
     }
 }
