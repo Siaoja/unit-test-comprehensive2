@@ -112,4 +112,15 @@ public class GuessNumberGameTest {
         assertEquals(false,checkResult);
     }
 
+    @Test
+    void should_given_1123_when_check_input_then_return_false() {
+        //given
+        String wrongInput = "1123";
+
+        //when
+        Boolean checkResult = guessNumberGame.checkInput(wrongInput);
+
+        //then
+        assertEquals(false,checkResult);
+    }
 }
