@@ -123,4 +123,16 @@ public class GuessNumberGameTest {
         //then
         assertEquals(false,checkResult);
     }
+
+    @Test
+    void should_given_1234_when_check_input_then_return_true() {
+        //given
+        String rightInput = "1234";
+
+        //when
+        Boolean checkResult = guessNumberGame.checkInput(rightInput);
+
+        //then
+        assertEquals(true,checkResult);
+    }
 }
