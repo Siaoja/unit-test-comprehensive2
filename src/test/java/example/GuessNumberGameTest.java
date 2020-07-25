@@ -32,7 +32,6 @@ public class GuessNumberGameTest {
         String guessNumber = "5678";
 
         //when
-        guessNumberGame = new GuessNumberGame(mockedAnswerGenerator);
         String guessResult = guessNumberGame.guess(guessNumber);
 
         //then
@@ -45,7 +44,6 @@ public class GuessNumberGameTest {
         String guessNumber = "1234";
 
         //when
-        guessNumberGame = new GuessNumberGame(mockedAnswerGenerator);
         String guessResult = guessNumberGame.guess(guessNumber);
 
         //then
@@ -58,7 +56,6 @@ public class GuessNumberGameTest {
         String guessNumber = "4321";
 
         //when
-        guessNumberGame = new GuessNumberGame(mockedAnswerGenerator);
         String guessResult = guessNumberGame.guess(guessNumber);
 
         //then
@@ -71,7 +68,6 @@ public class GuessNumberGameTest {
         String guessNumber = "5643";
 
         //when
-        guessNumberGame = new GuessNumberGame(mockedAnswerGenerator);
         String guessResult = guessNumberGame.guess(guessNumber);
 
         //then
@@ -85,7 +81,6 @@ public class GuessNumberGameTest {
         String guessNumber = "1243";
 
         //when
-        guessNumberGame = new GuessNumberGame(mockedAnswerGenerator);
         String guessResult = guessNumberGame.guess(guessNumber);
 
         //then
@@ -98,10 +93,10 @@ public class GuessNumberGameTest {
         String guessNumber = "1245";
 
         //when
-        guessNumberGame = new GuessNumberGame(mockedAnswerGenerator);
         String guessResult = guessNumberGame.guess(guessNumber);
 
         //then
         assertEquals("2A1B", guessResult);
     }
+
 }
