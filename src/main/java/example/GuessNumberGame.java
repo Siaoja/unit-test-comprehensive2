@@ -30,6 +30,6 @@ public class GuessNumberGame {
     }
 
     public Boolean checkInput(String wrongInput) {
-        return null;
+        return false;
     }
 }
