@@ -88,6 +88,5 @@ public class GuessNumberGameTest {
 
         //then
         assertEquals("2A1B",guessResult);
-
     }
 }
