@@ -4,8 +4,8 @@ public class GuessNumberGame {
     private final int size = 4;
     private String answer;
 
-    public GuessNumberGame(String answer) {
-        this.answer = answer;
+    public GuessNumberGame(Generator generator) {
+        this.answer = generator.generate();
     }
 
     public String guess(String guessNumber) {
