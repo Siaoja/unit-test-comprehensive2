@@ -99,4 +99,17 @@ public class GuessNumberGameTest {
         assertEquals("2A1B", guessResult);
     }
 
+
+    @Test
+    void should_given_11_when_check_input_then_return_false() {
+        //given
+        String wrongInput = "11";
+
+        //when
+        Boolean checkResult = guessNumberGame.checkInput(wrongInput);
+
+        //then
+        assertEquals(false,checkResult);
+    }
+
 }

@@ -28,4 +28,8 @@ public class GuessNumberGame {
 
         return guessResult.toString();
     }
+
+    public Boolean checkInput(String wrongInput) {
+        return null;
+    }
 }
