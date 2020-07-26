@@ -5,6 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.BDDMockito.given;
 
@@ -109,7 +115,7 @@ public class GuessNumberGameTest {
         Boolean checkResult = guessNumberGame.checkInput(wrongInput);
 
         //then
-        assertEquals(false,checkResult);
+        assertEquals(false, checkResult);
     }
 
     @Test
@@ -121,7 +127,7 @@ public class GuessNumberGameTest {
         Boolean checkResult = guessNumberGame.checkInput(wrongInput);
 
         //then
-        assertEquals(false,checkResult);
+        assertEquals(false, checkResult);
     }
 
     @Test
@@ -133,6 +139,21 @@ public class GuessNumberGameTest {
         Boolean checkResult = guessNumberGame.checkInput(rightInput);
 
         //then
-        assertEquals(true,checkResult);
+        assertEquals(true, checkResult);
+    }
+
+
+    @Test
+    void should_given_guess_numbers_when_call_play_then_return_win_info() {
+        //given
+        String data = "1 0 2 4\n2 1 0 5\n4 3 2 1\n1 1 2 4\n1 2\n1 2 3 4";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+        //when
+
+        String guessResult = guessNumberGame.play();
+
+        //then
+        assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n4A0B\nCongratulations,you win!\n", guessResult);
     }
 }

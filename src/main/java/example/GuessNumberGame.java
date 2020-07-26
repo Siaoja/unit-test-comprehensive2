@@ -1,11 +1,11 @@
 package example;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GuessNumberGame {
-    private final int size = 4;
-    private String answer;
+    private final String answer;
 
     public GuessNumberGame(Generator generator) {
         this.answer = generator.generate();
@@ -33,24 +33,30 @@ public class GuessNumberGame {
     }
 
     public Boolean checkInput(String wrongInput) {
-        Boolean checkResult = true;
-        if(wrongInput == null || wrongInput.length() != 4){
+        boolean checkResult = true;
+        int size = 4;
+        if (wrongInput == null || wrongInput.length() != size) {
             checkResult = false;
-        }else{
+        } else {
             Set<Character> answerSet = new HashSet<>();
             for (int index = 0, len = wrongInput.length(); index < len; index++) {
                 char number = wrongInput.charAt(index);
                 answerSet.add(number);
-                if(number >= '9' || number <= '0'){
+                if (number >= '9' || number <= '0') {
                     checkResult = false;
                     break;
                 }
             }
-            if(checkResult && answerSet.size() != 4){
+            if (checkResult && answerSet.size() != size) {
                 checkResult = false;
             }
         }
 
         return checkResult;
+    }
+
+
+    public String play() {
+        return null;
     }
 }
