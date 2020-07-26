@@ -82,10 +82,6 @@ public class GuessNumberGame {
                 gameResult.append("Wrong Input，Input again\n");
                 System.out.println("Wrong Input，Input again");
             }
-            if (index == times - 1) {
-                gameResult.append("GameOver\n");
-                System.out.println("GameOver");
-            }
         }
         return gameResult.toString();
     }
