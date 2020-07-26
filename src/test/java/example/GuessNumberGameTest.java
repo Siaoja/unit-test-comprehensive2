@@ -138,11 +138,10 @@ public class GuessNumberGameTest {
         assertEquals(true, checkResult);
     }
 
-
     @Test
     void should_given_guess_numbers_when_call_play_then_return_win_info() {
         //given
-        String data = "1 0 2 4\n2 1 0 5\n4 3 2 1\n1 1 2 4\n1 2\n1 2 3 4";
+        String data = "1 0 2 4\n2 1 0 5\n4 3 2 1\n1 1 2 4\n1 2\n1 2 3 4\n";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
 
         //when
@@ -151,5 +150,18 @@ public class GuessNumberGameTest {
 
         //then
         assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n4A0B\nCongratulations,you win!\n", guessResult);
+    }
+
+    @Test
+    void should_given_guess_numbers_when_call_play_then_return_lose_info() {
+        //given
+        String data = "1 0 2 4\n2 1 0 5\n4 3 2 1\n1 1 2 4\n1 2\n5 6 7 8\n";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+        //when
+        String guessResult = guessNumberGame.play();
+
+        //then
+        assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n0A0B\nGameOver\n", guessResult);
     }
 }
