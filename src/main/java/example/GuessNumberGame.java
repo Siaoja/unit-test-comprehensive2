@@ -1,7 +1,10 @@
 package example;
 
+import com.sun.javafx.binding.StringFormatter;
+
 import java.util.HashSet;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 
 public class GuessNumberGame {
@@ -42,7 +45,7 @@ public class GuessNumberGame {
             for (int index = 0, len = wrongInput.length(); index < len; index++) {
                 char number = wrongInput.charAt(index);
                 answerSet.add(number);
-                if (number >= '9' || number <= '0') {
+                if (number > '9' || number < '0') {
                     checkResult = false;
                     break;
                 }
@@ -57,6 +60,33 @@ public class GuessNumberGame {
 
 
     public String play() {
-        return null;
+        int times = 6;
+        StringBuilder gameResult = new StringBuilder();
+        Scanner scanner = new Scanner(System.in);
+
+        for (int index = 0; (index < times) && scanner.hasNextLine(); index++) {
+
+            String guessNumber = scanner.nextLine().replaceAll(" ","");
+
+            if (checkInput(guessNumber)) {
+                String guessResult = guess(guessNumber);
+                if (guessResult.equals("4A0B")) {
+                    gameResult.append(guessResult).append("\nCongratulations,you win!\n");
+                    System.out.println(String.format("%s\nCongratulations,you win!",guessResult));
+                    break;
+                } else {
+                    gameResult.append(guessResult).append("\n");
+                    System.out.println(String.format("%s",guessResult));
+                }
+            } else {
+                gameResult.append("Wrong Input，Input again\n");
+                System.out.println("Wrong Input，Input again");
+            }
+            if (index == times - 1) {
+                gameResult.append("GameOver\n");
+                System.out.println("GameOver");
+            }
+        }
+        return gameResult.toString();
     }
 }
