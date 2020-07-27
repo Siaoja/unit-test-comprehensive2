@@ -35,10 +35,14 @@ public class GuessNumberGame {
 
         return guessResult.toString();
     }
+    private boolean judgeNumberScope(char number){
+        return number > '9' || number < '0';
+    }
 
     public Boolean checkInput(String wrongInput) {
         boolean checkResult = true;
         int size = 4;
+
         if (wrongInput == null || wrongInput.length() != size) {
             checkResult = false;
         } else {
@@ -46,7 +50,7 @@ public class GuessNumberGame {
             for (int index = 0, len = wrongInput.length(); index < len; index++) {
                 char number = wrongInput.charAt(index);
                 answerSet.add(number);
-                if (number > '9' || number < '0') {
+                if (judgeNumberScope(number)) {
                     checkResult = false;
                     break;
                 }
@@ -58,7 +62,6 @@ public class GuessNumberGame {
 
         return checkResult;
     }
-
 
     public String play() {
         int times = 6;
