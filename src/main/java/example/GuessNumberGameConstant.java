@@ -6,4 +6,7 @@ public enum GuessNumberGameConstant {
     GuessNumberGameConstant(String constantValue){
         this.constantValue = constantValue;
     }
+    public String getConstantValue(){
+        return constantValue;
+    }
 }
