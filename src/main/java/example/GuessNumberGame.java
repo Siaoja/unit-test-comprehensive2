@@ -8,6 +8,7 @@ public class GuessNumberGame {
     private static final String NULL_STRING = "";
     private static final String SPACE_STRING = " ";
     private final String answer;
+    private final int numbersSize = 4;
 
     public GuessNumberGame(Generator generator) {
         this.answer = generator.generate();
@@ -38,13 +39,14 @@ public class GuessNumberGame {
     private boolean judgeNumberScope(char number){
         return number > '9' || number < '0';
     }
-
+    private boolean isNumbersNull(String numbers){
+        return numbers == null || numbers.length() != numbersSize;
+    }
 
     public Boolean checkInput(String numbers) {
         boolean checkResult = true;
-        int size = 4;
 
-        if (numbers == null || numbers.length() != size) {
+        if (isNumbersNull(numbers)) {
             checkResult = false;
         } else {
             Set<Character> answerSet = new HashSet<>();
@@ -56,7 +58,7 @@ public class GuessNumberGame {
                     break;
                 }
             }
-            if (checkResult && answerSet.size() != size) {
+            if (checkResult && answerSet.size() != numbersSize) {
                 checkResult = false;
             }
         }
