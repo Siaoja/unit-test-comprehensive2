@@ -14,6 +14,9 @@ public class GuessNumberGame {
     }
 
     public String guess(String guessNumber) {
+
+        final String ALL_RIGHT_SUFFIX = "A";
+        final String NUMBER_RIGHT_SUFFIX = "B";
         StringBuilder guessResult = new StringBuilder();
         int countRightNumberWrongPosition = 0;
         int countRightNumberRightPosition = 0;
@@ -27,7 +30,7 @@ public class GuessNumberGame {
             }
         }
 
-        guessResult.append(countRightNumberRightPosition).append("A").append(countRightNumberWrongPosition).append("B");
+        guessResult.append(countRightNumberRightPosition).append(ALL_RIGHT_SUFFIX).append(countRightNumberWrongPosition).append(NUMBER_RIGHT_SUFFIX);
 
 
         return guessResult.toString();
