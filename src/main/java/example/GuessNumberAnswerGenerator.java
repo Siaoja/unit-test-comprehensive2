@@ -7,6 +7,7 @@ import java.util.Set;
 public class GuessNumberAnswerGenerator implements Generator{
 
     private static final int ANSWER_LENGTH = 4;
+    private static final int SCOPE = 10;
 
     @Override
     public String generate() {
@@ -15,7 +16,7 @@ public class GuessNumberAnswerGenerator implements Generator{
         StringBuilder guessNumber = new StringBuilder();
 
         while (numbersSet.size() != ANSWER_LENGTH){
-            numbersSet.add(random.nextInt(10));
+            numbersSet.add(random.nextInt(SCOPE));
         }
         for(Integer number : numbersSet){
             guessNumber.append(number);
