@@ -77,8 +77,8 @@ public class GuessNumberGame {
 
             if (checkInput(guessNumber)) {
                 String guessResult = guess(guessNumber);
-                if (guessResult.equals(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.getConstantValue())) {
-                    gameResult.append(guessResult).append("\nCongratulations,you win!\n");
+                if (guessResult.equals(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.constantValue)) {
+                    gameResult.append(guessResult).append("\n").append(GuessNumberGameConstant.WIN_INFO.constantValue);
                     System.out.println(String.format("%s\nCongratulations,you win!", guessResult));
                     break;
                 } else {
@@ -90,7 +90,7 @@ public class GuessNumberGame {
                 System.out.println("Wrong Input，Input again");
             }
             if (index == times - 1) {
-                gameResult.append("GameOver\n");
+                gameResult.append("GameOver");
                 System.out.println("GameOver");
             }
         }

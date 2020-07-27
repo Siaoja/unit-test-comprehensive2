@@ -149,7 +149,7 @@ public class GuessNumberGameTest {
         String guessResult = guessNumberGame.play();
 
         //then
-        assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n4A0B\nCongratulations,you win!\n", guessResult);
+        assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n4A0B\nCongratulations,you win!", guessResult);
     }
 
     @Test
@@ -162,6 +162,6 @@ public class GuessNumberGameTest {
         String guessResult = guessNumberGame.play();
 
         //then
-        assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n0A0B\nGameOver\n", guessResult);
+        assertEquals("2A1B\n0A2B\n0A4B\nWrong Input，Input again\nWrong Input，Input again\n0A0B\nGameOver", guessResult);
     }
 }
