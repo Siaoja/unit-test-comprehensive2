@@ -79,19 +79,15 @@ public class GuessNumberGame {
                 String guessResult = guess(guessNumber);
                 if (guessResult.equals(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.constantValue)) {
                     gameResult.append(guessResult).append("\n").append(GuessNumberGameConstant.WIN_INFO.constantValue);
-                    System.out.println(String.format("%s\nCongratulations,you win!", guessResult));
                     break;
                 } else {
                     gameResult.append(guessResult).append("\n");
-                    System.out.println(String.format("%s", guessResult));
                 }
             } else {
-                gameResult.append("Wrong Input，Input again\n");
-                System.out.println("Wrong Input，Input again");
+                gameResult.append(GuessNumberGameConstant.WRONG_INPUT.constantValue).append("\n");
             }
             if (index == times - 1) {
                 gameResult.append("GameOver");
-                System.out.println("GameOver");
             }
         }
         return gameResult.toString();
