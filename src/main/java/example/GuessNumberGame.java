@@ -20,7 +20,7 @@ public class GuessNumberGame {
         int countRightNumberRightPosition = 0;
 
         if (answer.equals(guessNumber)) {
-            guessResult.append("4A0B");
+            guessResult.append(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER);
         } else {
             for (int index = 0, len = guessNumber.length(); index < len; index++) {
                 if (index == answer.indexOf(guessNumber.charAt(index))) {
@@ -70,7 +70,7 @@ public class GuessNumberGame {
 
             if (checkInput(guessNumber)) {
                 String guessResult = guess(guessNumber);
-                if (guessResult.equals("4A0B")) {
+                if (guessResult.equals(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER)) {
                     gameResult.append(guessResult).append("\nCongratulations,you win!\n");
                     System.out.println(String.format("%s\nCongratulations,you win!",guessResult));
                     break;
