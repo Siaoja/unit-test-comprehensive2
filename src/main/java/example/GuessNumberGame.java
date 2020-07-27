@@ -1,9 +1,6 @@
 package example;
 
-import com.sun.javafx.binding.StringFormatter;
-
 import java.util.HashSet;
-import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
