@@ -37,12 +37,6 @@ public class GuessNumberGame {
 
         return guessResult.toString();
     }
-    private boolean judgeNumberScope(char number){
-        return number > '9' || number < '0';
-    }
-    private boolean isNumbersNull(String numbers){
-        return numbers == null || numbers.length() != numbersSize;
-    }
 
     public Boolean checkInput(String numbers) {
         boolean checkResult = true;
@@ -92,5 +86,16 @@ public class GuessNumberGame {
             }
         }
         return gameResult.toString();
+    }
+
+
+    private boolean judgeNumberScope(char number) {
+        char numberNine = '9';
+        char numberZero = '0';
+        return number > numberNine || number < numberZero;
+    }
+
+    private boolean isNumbersNull(String numbers) {
+        return numbers == null || numbers.length() != numbersSize;
     }
 }
