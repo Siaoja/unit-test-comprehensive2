@@ -13,15 +13,15 @@ public class GuessNumberAnswerGenerator implements Generator{
     public String generate() {
         Random random = new Random();
         Set<Integer> numbersSet = new HashSet<>();
-        StringBuilder guessNumber = new StringBuilder();
+        StringBuilder answerNumber = new StringBuilder();
 
         while (numbersSet.size() != ANSWER_LENGTH){
             numbersSet.add(random.nextInt(SCOPE));
         }
         for(Integer number : numbersSet){
-            guessNumber.append(number);
+            answerNumber.append(number);
         }
 
-        return guessNumber.toString();
+        return answerNumber.toString();
     }
 }
