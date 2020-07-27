@@ -16,19 +16,16 @@ public class GuessNumberGame {
         int countRightNumberWrongPosition = 0;
         int countRightNumberRightPosition = 0;
 
-        if (answer.equals(guessNumber)) {
-            guessResult.append(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.getConstantValue());
-        } else {
-            for (int index = 0, len = guessNumber.length(); index < len; index++) {
-                int answerIndex = answer.indexOf(guessNumber.charAt(index));
-                if (index == answerIndex) {
-                    countRightNumberRightPosition++;
-                } else if (answerIndex != -1) {
-                    countRightNumberWrongPosition++;
-                }
+        for (int index = 0, len = guessNumber.length(); index < len; index++) {
+            int answerIndex = answer.indexOf(guessNumber.charAt(index));
+            if (index == answerIndex) {
+                countRightNumberRightPosition++;
+            } else if (answerIndex != -1) {
+                countRightNumberWrongPosition++;
             }
-            guessResult.append(countRightNumberRightPosition).append("A").append(countRightNumberWrongPosition).append("B");
         }
+        guessResult.append(countRightNumberRightPosition).append("A").append(countRightNumberWrongPosition).append("B");
+
 
         return guessResult.toString();
     }
@@ -64,17 +61,17 @@ public class GuessNumberGame {
 
         for (int index = 0; (index < times) && scanner.hasNextLine(); index++) {
 
-            String guessNumber = scanner.nextLine().replaceAll(" ","");
+            String guessNumber = scanner.nextLine().replaceAll(" ", "");
 
             if (checkInput(guessNumber)) {
                 String guessResult = guess(guessNumber);
                 if (guessResult.equals(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.getConstantValue())) {
                     gameResult.append(guessResult).append("\nCongratulations,you win!\n");
-                    System.out.println(String.format("%s\nCongratulations,you win!",guessResult));
+                    System.out.println(String.format("%s\nCongratulations,you win!", guessResult));
                     break;
                 } else {
                     gameResult.append(guessResult).append("\n");
-                    System.out.println(String.format("%s",guessResult));
+                    System.out.println(String.format("%s", guessResult));
                 }
             } else {
                 gameResult.append("Wrong Input，Input again\n");
