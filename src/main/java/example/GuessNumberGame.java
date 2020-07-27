@@ -20,9 +20,10 @@ public class GuessNumberGame {
             guessResult.append(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.getConstantValue());
         } else {
             for (int index = 0, len = guessNumber.length(); index < len; index++) {
-                if (index == answer.indexOf(guessNumber.charAt(index))) {
+                int answerIndex = answer.indexOf(guessNumber.charAt(index));
+                if (index == answerIndex) {
                     countRightNumberRightPosition++;
-                } else if (answer.indexOf(guessNumber.charAt(index)) != -1) {
+                } else if (answerIndex != -1) {
                     countRightNumberWrongPosition++;
                 }
             }
