@@ -7,6 +7,7 @@ import java.util.Set;
 public class GuessNumberGame {
     private static final String NULL_STRING = "";
     private static final String SPACE_STRING = " ";
+    private static final String ENTER_STRING = "\n";
     private final String answer;
     private final int numbersSize = 4;
 
@@ -78,16 +79,16 @@ public class GuessNumberGame {
             if (checkInput(guessNumber)) {
                 String guessResult = guess(guessNumber);
                 if (guessResult.equals(GuessNumberGameConstant.RIGHT_POSITION_RIGHT_NUMBER.constantValue)) {
-                    gameResult.append(guessResult).append("\n").append(GuessNumberGameConstant.WIN_INFO.constantValue);
+                    gameResult.append(guessResult).append(ENTER_STRING).append(GuessNumberGameConstant.WIN_INFO.constantValue);
                     break;
                 } else {
-                    gameResult.append(guessResult).append("\n");
+                    gameResult.append(guessResult).append(ENTER_STRING);
                 }
             } else {
-                gameResult.append(GuessNumberGameConstant.WRONG_INPUT.constantValue).append("\n");
+                gameResult.append(GuessNumberGameConstant.WRONG_INPUT.constantValue).append(ENTER_STRING);
             }
             if (index == times - 1) {
-                gameResult.append("GameOver");
+                gameResult.append(GuessNumberGameConstant.LOSE_INFO.constantValue);
             }
         }
         return gameResult.toString();
