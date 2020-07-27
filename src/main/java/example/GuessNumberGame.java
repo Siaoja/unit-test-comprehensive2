@@ -39,16 +39,17 @@ public class GuessNumberGame {
         return number > '9' || number < '0';
     }
 
-    public Boolean checkInput(String wrongInput) {
+
+    public Boolean checkInput(String numbers) {
         boolean checkResult = true;
         int size = 4;
 
-        if (wrongInput == null || wrongInput.length() != size) {
+        if (numbers == null || numbers.length() != size) {
             checkResult = false;
         } else {
             Set<Character> answerSet = new HashSet<>();
-            for (int index = 0, len = wrongInput.length(); index < len; index++) {
-                char number = wrongInput.charAt(index);
+            for (int index = 0, len = numbers.length(); index < len; index++) {
+                char number = numbers.charAt(index);
                 answerSet.add(number);
                 if (judgeNumberScope(number)) {
                     checkResult = false;
