@@ -38,7 +38,6 @@ public class GuessNumberGame {
     public Boolean checkInput(String numbers) {
         boolean checkResult = true;
 
-//        TODO simplify if-else
         if (isNumbersNull(numbers)) {
             checkResult = false;
         } else {
