@@ -30,10 +30,8 @@ public class GuessNumberGame {
                 countRightNumberWrongPosition++;
             }
         }
-//TODO too long
+
         guessResult.append(countRightNumberRightPosition).append(ALL_RIGHT_SUFFIX).append(countRightNumberWrongPosition).append(NUMBER_RIGHT_SUFFIX);
-
-
         return guessResult.toString();
     }
 
