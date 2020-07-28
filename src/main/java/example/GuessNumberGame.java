@@ -42,7 +42,6 @@ public class GuessNumberGame {
         if (isNumbersNull(numbers)) {
             checkResult = false;
         } else {
-            //TODO renaming
             Set<Character> answerSet = new HashSet<>();
             for (int index = 0, length = numbers.length(); index < length; index++) {
                 char number = numbers.charAt(index);
