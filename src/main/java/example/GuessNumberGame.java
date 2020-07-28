@@ -89,7 +89,7 @@ public class GuessNumberGame {
     }
 
 
-    private boolean judgeNumberScope(char number) {
+    private boolean isNotNumberScope(char number) {
         char numberNine = '9';
         char numberZero = '0';
         return number > numberNine || number < numberZero;
