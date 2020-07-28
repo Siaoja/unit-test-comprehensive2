@@ -48,7 +48,7 @@ public class GuessNumberGame {
             for (int index = 0, len = numbers.length(); index < len; index++) {
                 char number = numbers.charAt(index);
                 answerSet.add(number);
-                if (judgeNumberScope(number)) {
+                if (isNotNumberScope(number)) {
                     checkResult = false;
                     break;
                 }
