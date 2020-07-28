@@ -19,7 +19,7 @@ public class GuessGameAnswerGeneratorTest {
         //then
         Set<Character> answerSet = new HashSet<>();
         assertNotNull(answer);
-        for (int index = 0, len = answer.length(); index < len; index++) {
+        for (int index = 0, length = answer.length(); index < length; index++) {
             char number = answer.charAt(index);
             answerSet.add(number);
             assertTrue(number <= '9');

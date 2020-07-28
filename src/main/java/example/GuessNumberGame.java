@@ -22,8 +22,7 @@ public class GuessNumberGame {
         StringBuilder guessResult = new StringBuilder();
         int countRightNumberWrongPosition = 0;
         int countRightNumberRightPosition = 0;
-
-        for (int index = 0, len = guessNumber.length(); index < len; index++) {
+        for (int index = 0, length = guessNumber.length(); index < length; index++) {
             int answerIndex = answer.indexOf(guessNumber.charAt(index));
             if (index == answerIndex) {
                 countRightNumberRightPosition++;
@@ -31,7 +30,7 @@ public class GuessNumberGame {
                 countRightNumberWrongPosition++;
             }
         }
-
+//TODO too long
         guessResult.append(countRightNumberRightPosition).append(ALL_RIGHT_SUFFIX).append(countRightNumberWrongPosition).append(NUMBER_RIGHT_SUFFIX);
 
 
@@ -41,11 +40,13 @@ public class GuessNumberGame {
     public Boolean checkInput(String numbers) {
         boolean checkResult = true;
 
+//        TODO simplify if-else
         if (isNumbersNull(numbers)) {
             checkResult = false;
         } else {
+            //TODO renaming
             Set<Character> answerSet = new HashSet<>();
-            for (int index = 0, len = numbers.length(); index < len; index++) {
+            for (int index = 0, length = numbers.length(); index < length; index++) {
                 char number = numbers.charAt(index);
                 answerSet.add(number);
                 if (isNotNumberScope(number)) {
