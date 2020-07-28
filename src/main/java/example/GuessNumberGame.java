@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class GuessNumberGame {
-    private static final String NULL_STRING = "";
+    private static final String EMPTY_STRING = "";
     private static final String SPACE_STRING = " ";
     private static final String ENTER_STRING = "\n";
     private final String answer;
@@ -67,7 +67,7 @@ public class GuessNumberGame {
 
         for (int index = 0; (index < times) && scanner.hasNextLine(); index++) {
 
-            String guessNumber = scanner.nextLine().replaceAll(SPACE_STRING, NULL_STRING);
+            String guessNumber = scanner.nextLine().replaceAll(SPACE_STRING, EMPTY_STRING);
 
             if (checkInput(guessNumber)) {
                 String guessResult = guess(guessNumber);
